@@ -8,5 +8,7 @@ namespace Library.Domain
 {
     internal class Book
     {
+        public string Title { get; set; }
+        public int BookId { get; set; }     
     }
 }
