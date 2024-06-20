@@ -5,12 +5,13 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Library.Domain;
-
-public class Book
+public class User
 {
+    public string Name { get; set; }
+    public int Age { get; set; }
     public int Id { get; set; }
-    public string Title { get; set; }
     public Admin Admin { get; set; }
-    public int AdminId {  get; set; }      
+    public int AdminId { get; set; }
     public List<UserBook> UserBooks { get; set; }
+    
 }

@@ -13,9 +13,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrustructure", "Infrustru
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Library.API", "Src\API\Library.API\Library.API.csproj", "{1A990EC9-53A9-4DFE-81AA-DFE971083F4C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Library.Domain", "Src\Domain\Library.Domain\Library.Domain.csproj", "{7E334367-ED48-4CAC-B1B2-555072456F63}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Library.Domain", "Src\Domain\Library.Domain\Library.Domain.csproj", "{7E334367-ED48-4CAC-B1B2-555072456F63}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Library.Infrustructure", "Src\Infrustructure\Library.Infrustructure\Library.Infrustructure.csproj", "{BAAEF74C-C04F-438A-B59D-AE8C37DCD7B5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Library.Infrustructure", "Src\Infrustructure\Library.Infrustructure\Library.Infrustructure.csproj", "{BAAEF74C-C04F-438A-B59D-AE8C37DCD7B5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
