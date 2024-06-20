@@ -83,7 +83,6 @@ namespace Library.Infrustructure.Migrations
                         .HasColumnType("int");
 
                     b.Property<int>("Age")
-                        .HasMaxLength(2)
                         .HasColumnType("int");
 
                     b.Property<string>("Name")
@@ -126,7 +125,6 @@ namespace Library.Infrustructure.Migrations
                     b.HasOne("Library.Domain.Admin", "Admin")
                         .WithMany("Books")
                         .HasForeignKey("AdminId")
-                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Admin");
@@ -137,7 +135,6 @@ namespace Library.Infrustructure.Migrations
                     b.HasOne("Library.Domain.Admin", "Admin")
                         .WithMany("Users")
                         .HasForeignKey("AdminId")
-                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Admin");
@@ -148,13 +145,11 @@ namespace Library.Infrustructure.Migrations
                     b.HasOne("Library.Domain.Book", "Book")
                         .WithMany("UserBooks")
                         .HasForeignKey("BookId")
-                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("Library.Domain.User", "User")
                         .WithMany("UserBooks")
                         .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Book");

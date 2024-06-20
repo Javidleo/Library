@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Library.Infrustructure.Migrations
 {
     [DbContext(typeof(LibraryDbContext))]
-    [Migration("20240616122210_init")]
-    partial class init
+    [Migration("20240619111115_initialize")]
+    partial class initialize
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -86,7 +86,6 @@ namespace Library.Infrustructure.Migrations
                         .HasColumnType("int");
 
                     b.Property<int>("Age")
-                        .HasMaxLength(2)
                         .HasColumnType("int");
 
                     b.Property<string>("Name")
@@ -129,7 +128,6 @@ namespace Library.Infrustructure.Migrations
                     b.HasOne("Library.Domain.Admin", "Admin")
                         .WithMany("Books")
                         .HasForeignKey("AdminId")
-                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Admin");
@@ -140,7 +138,6 @@ namespace Library.Infrustructure.Migrations
                     b.HasOne("Library.Domain.Admin", "Admin")
                         .WithMany("Users")
                         .HasForeignKey("AdminId")
-                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Admin");
@@ -151,13 +148,11 @@ namespace Library.Infrustructure.Migrations
                     b.HasOne("Library.Domain.Book", "Book")
                         .WithMany("UserBooks")
                         .HasForeignKey("BookId")
-                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("Library.Domain.User", "User")
                         .WithMany("UserBooks")
                         .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Book");

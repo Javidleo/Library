@@ -14,7 +14,8 @@ public class AdminConfigurations : IEntityTypeConfiguration<Admin>
     {
         builder.HasMany(x => x.Users)
                .WithOne(i => i.Admin)
-               .HasForeignKey(i => i.AdminId);
+               .HasForeignKey(i => i.AdminId)
+               .OnDelete(DeleteBehavior.ClientSetNull);
 
         builder.HasKey(i => i.Id);
 

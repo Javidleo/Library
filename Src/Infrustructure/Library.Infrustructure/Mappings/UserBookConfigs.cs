@@ -16,11 +16,13 @@ public class UserBookConfigs : IEntityTypeConfiguration<UserBook>
     {
         builder.HasOne(i => i.User)
                .WithMany(i => i.UserBooks)
-               .HasForeignKey(i => i.UserId);
+               .HasForeignKey(i => i.UserId)
+               .OnDelete(DeleteBehavior.ClientSetNull);
 
         builder.HasOne(i => i.Book)
                .WithMany(i => i.UserBooks)
-               .HasForeignKey(i => i.BookId);
+               .HasForeignKey(i => i.BookId)
+               .OnDelete(DeleteBehavior.ClientSetNull);
 
         builder.HasKey(i => i.Id);
     }

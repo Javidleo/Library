@@ -16,7 +16,8 @@ public class BookConfigurations : IEntityTypeConfiguration<Book>
 
         builder.HasOne(b => b.Admin)
                .WithMany(i => i.Books)
-               .HasForeignKey(x => x.AdminId);
+               .HasForeignKey(x => x.AdminId)
+               .OnDelete(DeleteBehavior.ClientSetNull);
         
         builder.HasKey(i => i.Id);
 

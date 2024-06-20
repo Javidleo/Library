@@ -17,7 +17,8 @@ public class UserConfigurations : IEntityTypeConfiguration<User>
 
         builder.HasOne(x => x.Admin)
                .WithMany(i => i.Users)
-               .HasForeignKey(i => i.AdminId);
+               .HasForeignKey(i => i.AdminId)
+               .OnDelete(DeleteBehavior.ClientSetNull);
 
         builder.HasKey(i => i.Id);
 
@@ -25,8 +26,7 @@ public class UserConfigurations : IEntityTypeConfiguration<User>
                .HasMaxLength(20)
                .IsRequired();
 
-        builder.Property<int>(i => i.Age)
-               .HasMaxLength(2)
+        builder.Property(i => i.Age)
                .IsRequired();
     }
 }

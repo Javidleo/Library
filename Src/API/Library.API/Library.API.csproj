@@ -23,4 +23,8 @@
     <ProjectReference Include="..\..\Infrustructure\Library.Infrustructure\Library.Infrustructure.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Controllers\" />
+  </ItemGroup>
+
 </Project>
