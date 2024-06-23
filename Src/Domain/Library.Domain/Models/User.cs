@@ -7,9 +7,11 @@ using System.Threading.Tasks;
 namespace Library.Domain;
 public class User
 {
-    public string Name { get; set; }
-    public int Age { get; set; }
     public int Id { get; set; }
+    public string Name { get; set; }
+    public string LastName { get; set; }
+    public string NationalCode { get; set; }
+    public string Address { get; set; }
     public Admin Admin { get; set; }
     public int AdminId { get; set; }
     public List<UserBook> UserBooks { get; set; }

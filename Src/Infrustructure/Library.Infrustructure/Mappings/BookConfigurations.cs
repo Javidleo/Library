@@ -13,14 +13,7 @@ public class BookConfigurations : IEntityTypeConfiguration<Book>
     public void Configure(EntityTypeBuilder<Book> builder)
     {
         builder.HasKey(i => i.Id);
-
-        builder.HasOne(b => b.Admin)
-               .WithMany(i => i.Books)
-               .HasForeignKey(x => x.AdminId)
-               .OnDelete(DeleteBehavior.ClientSetNull);
         
-        builder.HasKey(i => i.Id);
-
         builder.Property(i => i.Title)
                .HasMaxLength(20)
                .IsRequired();
