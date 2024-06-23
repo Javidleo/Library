@@ -10,12 +10,9 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-
 builder.Services
     .AddDbContext<LibraryDbContext>(option => 
         option.UseSqlServer(builder.Configuration.GetConnectionString("LibraryConnection")));
-
-
 
 var app = builder.Build();
 
@@ -29,7 +26,6 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
-
 
 app.MapControllers();
 
