@@ -67,8 +67,13 @@ namespace Library.Infrustructure.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("AdminId")
-                        .HasColumnType("int");
+                    b.Property<decimal>("Price")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<string>("Publisher")
+                        .IsRequired()
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
 
                     b.Property<string>("Title")
                         .IsRequired()
@@ -76,8 +81,6 @@ namespace Library.Infrustructure.Migrations
                         .HasColumnType("nvarchar(20)");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("AdminId");
 
                     b.ToTable("Books");
                 });
@@ -141,17 +144,6 @@ namespace Library.Infrustructure.Migrations
                     b.HasIndex("UserId");
 
                     b.ToTable("UserBooks");
-                });
-
-            modelBuilder.Entity("Library.Domain.Book", b =>
-                {
-                    b.HasOne("Library.Domain.Admin", "Admin")
-                        .WithMany()
-                        .HasForeignKey("AdminId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Admin");
                 });
 
             modelBuilder.Entity("Library.Domain.User", b =>
