@@ -1,4 +1,5 @@
 ﻿using Library.API.Dtos;
+using Library.API.ViewModels;
 using Library.Domain;
 using Library.Infrustructure;
 using Microsoft.AspNetCore.Mvc;
@@ -19,7 +20,14 @@ public class AdminController : ControllerBase
     [HttpGet]
     public async Task<IActionResult> GetAll()
     {
-        var admins = _dbContext.Admins.ToList();
+        var admins = _dbContext.Admins
+                     .Select(i => new AdminVm()
+                     {
+                         Id = i.Id,
+                         Name = i.Name,
+                         LastName = i.LastName
+                     })
+                     .ToList();
 
         return Ok(admins);
     }
@@ -27,7 +35,14 @@ public class AdminController : ControllerBase
     [HttpGet("{id}")]
     public async Task<IActionResult> GetById(int id)
     {
-        var admin = _dbContext.Admins.FirstOrDefault(i => i.Id == id);
+        var admin = _dbContext.Admins
+                    .Select(i => new AdminVm()
+                    {
+                        Id = i.Id,
+                        Name = i.Name,
+                        LastName = i.LastName
+                    }).FirstOrDefault(i => i.Id == id);
+
         if (admin is null)
             return NotFound();
 
