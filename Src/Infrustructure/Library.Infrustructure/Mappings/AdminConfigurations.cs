@@ -1,11 +1,6 @@
 ﻿using Library.Domain;
-using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Library.Infrustructure.Mappings;
 public class AdminConfigurations : IEntityTypeConfiguration<Admin>
@@ -23,12 +18,20 @@ public class AdminConfigurations : IEntityTypeConfiguration<Admin>
                .HasMaxLength(20)
                .IsRequired();
 
+        builder.Property(i => i.LastName)
+               .HasMaxLength(20)
+               .IsRequired();
+
+        builder.Property(i => i.UserName)
+               .HasMaxLength(20)
+               .IsRequired();
+
         builder.Property(i => i.Password)
             .HasMaxLength(20)
             .IsRequired();
 
-        builder.Property(i => i.Age)
-               .HasMaxLength(2)
+        builder.Property(i => i.NationalCode)
+               .HasMaxLength(12)
                .IsRequired();
     }
 }
