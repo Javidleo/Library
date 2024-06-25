@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 
-namespace Library.Domain
+namespace Library.Domain.Models
 {
     public class Admin
     {
@@ -12,6 +12,6 @@ namespace Library.Domain
         public string NationalCode { get; set; }
         public List<User> Users { get; set; }
     }
-    
+
 
 }

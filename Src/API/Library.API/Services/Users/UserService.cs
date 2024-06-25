@@ -1,4 +1,5 @@
 ﻿using Library.Domain;
+using Library.Domain.Models;
 using Library.Infrustructure.Migrations;
 using Microsoft.Identity.Client;
 

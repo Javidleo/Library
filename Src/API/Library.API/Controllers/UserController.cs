@@ -1,6 +1,6 @@
 ﻿using Library.API.Dtos;
 using Library.API.ViewModels;
-using Library.Domain;
+using Library.Domain.Models;
 using Library.Infrustructure;
 using Microsoft.AspNetCore.Mvc;
 
@@ -33,17 +33,17 @@ public class UserController : ControllerBase
     [HttpGet("{Id}")]
     public async Task<IActionResult> GetById(int id)
     {
-        var users = _dbContext.Users
+        var user = _dbContext.Users
                     .Select(i => new UserVm()
                     {
                         Id = i.Id,
                         Name = i.Name,
                         LastName = i.LastName
                     }).FirstOrDefault(i => i.Id == id);
-        if (users == null)
+        if (user == null)
             return NotFound("User not found");
 
-        return Ok(users);
+        return Ok(user);
     }
 
     [HttpPost]

@@ -1,6 +1,6 @@
 ﻿using Library.API.Dtos;
 using Library.API.ViewModels;
-using Library.Domain;
+using Library.Domain.Models;
 using Library.Infrustructure;
 using Microsoft.AspNetCore.Mvc;
 
