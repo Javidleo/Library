@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Library.Domain;
+namespace Library.Domain.Models;
 public class User
 {
     public int Id { get; set; }
@@ -15,5 +15,5 @@ public class User
     public Admin Admin { get; set; }
     public int AdminId { get; set; }
     public List<UserBook> UserBooks { get; set; }
-    
+
 }

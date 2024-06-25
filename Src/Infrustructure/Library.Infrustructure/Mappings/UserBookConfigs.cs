@@ -1,4 +1,4 @@
-﻿using Library.Domain;
+﻿using Library.Domain.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
